@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>SmartWardrobe Prototype</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Icons (Phosphor Icons) -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Header -->
+  <header class="app-header">
+    <div class="logo">
+      <i class="ph ph-t-shirt"></i>
+      <span>SmartWardrobe</span>
+    </div>
+    <div class="user-avatar">
+      <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="User Profile">
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main id="app-content">
+
+    <!-- View 1: Scan Successful -->
+    <section id="view-scan" class="view active">
+      <div class="scan-status">
+        <i class="ph-fill ph-check-circle"></i>
+        <span>SCAN SUCCESSFUL</span>
+      </div>
+      
+      <div class="product-hero">
+        <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=800&q=80" alt="Black Sweatshirt" class="product-image">
+      </div>
+      
+      <div class="product-details">
+        <h1 class="product-title">Athleisure Training Sweatshirt</h1>
+        <div class="product-badges">
+          <span class="badge">BLACK</span>
+          <span class="badge">SIZE M</span>
+        </div>
+        
+        <div class="bento-grid">
+          <div class="bento-card">
+            <span class="card-label">COMPOSITION</span>
+            <p class="card-value">80% Nylon, 20% Elastane</p>
+          </div>
+          <div class="bento-card">
+            <span class="card-label">TECH SPECS</span>
+            <div class="tech-specs-icons">
+              <i class="ph ph-wind"></i>
+              <i class="ph ph-drop"></i>
+              <span>Moisture Wicking</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="care-recommendations">
+          <span class="section-label">RECOMMENDED CARE</span>
+          <div class="care-row">
+            <div class="care-item">
+              <div class="care-icon"><i class="ph ph-washing-machine"></i></div>
+              <span>30°C Wash</span>
+            </div>
+            <div class="care-item">
+              <div class="care-icon"><i class="ph ph-prohibit"></i></div>
+              <span>No Bleach</span>
+            </div>
+            <div class="care-item">
+              <div class="care-icon"><i class="ph ph-thermometer"></i></div>
+              <span>Low Heat</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="action-area">
+          <button id="btn-add-wardrobe" class="btn-primary">Add to Digital Wardrobe</button>
+          <p class="helper-text" id="add-feedback-text">Added to 'Activewear' category.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- View 2: Sorter -->
+    <section id="view-sorter" class="view hidden">
+      <div class="view-header">
+        <h1 class="view-title">Smart Sorter</h1>
+        <p class="view-subtitle">Select garments to check washing compatibility and drying speed.</p>
+      </div>
+      
+      <div class="sorter-grid" id="sorter-grid-container">
+        <!-- JS will populate cards here -->
+      </div>
+      
+      <div class="sticky-action">
+        <button id="btn-check-compat" class="btn-primary">
+          <i class="ph ph-check-circle"></i> Check Compatibility
+        </button>
+      </div>
+    </section>
+
+    <!-- View 3: Conflict Modal -->
+    <div id="modal-conflict" class="modal-overlay hidden">
+      <div class="modal-card">
+        <div class="modal-alert">
+          <i class="ph-fill ph-warning"></i>
+          <div>
+            <strong>Conflict Detected</strong>
+            <p>Conflicting care requirements in current batch.</p>
+          </div>
+        </div>
+        
+        <div class="conflict-item-card">
+          <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=150&q=80" alt="Silk Blouse">
+          <div class="conflict-details">
+            <span class="danger-text">DRY CLEAN ONLY</span>
+            <p>Silk Evening Blouse</p>
+          </div>
+          <button class="btn-icon danger"><i class="ph ph-x"></i></button>
+        </div>
+        
+        <div class="smart-adjustment-card">
+          <div class="adjustment-header">
+            <i class="ph ph-magic-wand"></i> SMART ADJUSTMENT
+          </div>
+          <strong>Optimized Setting: Cold Wash / Low Spin</strong>
+          <p>This setting protects remaining fibers from heat damage and excessive wear. <strong>Remove the silk item</strong> to proceed safely.</p>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 70%"></div>
+          </div>
+        </div>
+        
+        <div class="modal-actions">
+          <button id="btn-remove-conflict" class="btn-secondary">REMOVE CONFLICT & START</button>
+          <button id="btn-dismiss-batch" class="btn-outlined">DISMISS BATCH</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- View 4: Wash Guide -->
+    <section id="view-wash" class="view hidden">
+      <div class="view-header flex-header">
+        <h1 class="view-title" id="wash-batch-title">Current Batch: 0 Items</h1>
+        <span class="badge primary-badge">READY</span>
+      </div>
+      
+      <div class="wash-instructions-list">
+        <!-- Temperature Card -->
+        <div class="instruction-card">
+          <div class="instruction-label">
+            <i class="ph ph-thermometer"></i> TEMPERATURE
+          </div>
+          <div class="instruction-value">
+            <span class="large-value" id="wash-temp-val">30°C</span>
+            <span class="small-value">Cold / Eco Wash</span>
+          </div>
+          <div class="instruction-note">
+            <i class="ph ph-info"></i> Protects delicate synthetic fibers and prevents dye bleeding.
+          </div>
+        </div>
+        
+        <!-- Cycle Card -->
+        <div class="instruction-card">
+          <div class="instruction-label">
+            <i class="ph ph-arrows-clockwise"></i> CYCLE
+          </div>
+          <div class="instruction-value">
+            <span class="medium-value" id="wash-cycle-val">Delicate / Mild</span>
+            <i class="ph ph-drop"></i>
+          </div>
+          <p class="instruction-desc">Low-speed spin and gentle agitation for silk and thin cottons.</p>
+        </div>
+        
+        <!-- Drying Card -->
+        <div class="instruction-card">
+          <div class="instruction-label">
+            <i class="ph ph-wind"></i> DRYING
+          </div>
+          <div class="instruction-value">
+            <span class="medium-value" id="wash-dry-val">Hang Dry</span>
+            <i class="ph ph-coat-hanger"></i>
+          </div>
+          <p class="instruction-desc">Do not tumble dry. Air dry in shade to maintain garment shape.</p>
+        </div>
+      </div>
+      
+      <div class="sticky-action">
+        <button id="btn-share-guide" class="btn-dark">
+          <i class="ph ph-share-network"></i> SHARE GUIDE
+        </button>
+        <p class="helper-text center-text">SEND INSTRUCTIONS TO LAUNDRY SERVICE/FAMILY.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Bottom Navigation -->
+  <nav class="bottom-nav">
+    <a href="#" class="nav-item active" data-target="scan">
+      <i class="ph ph-coat-hanger"></i>
+      <span>WARDROBE</span>
+    </a>
+    <a href="#" class="nav-item" data-target="sorter">
+      <i class="ph ph-squares-four"></i>
+      <span>SORTER</span>
+    </a>
+    <a href="#" class="nav-item" data-target="wash">
+      <i class="ph ph-washing-machine"></i>
+      <span>WASH</span>
+    </a>
+    <a href="#" class="nav-item" data-target="profile">
+      <i class="ph ph-user"></i>
+      <span>PROFILE</span>
+    </a>
+  </nav>
+
+  <script src="script.js"></script>
+</body>
+</html>
