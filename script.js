@@ -67,7 +67,7 @@ const MOCK_DB = [
 
 const scannedItem = {
   id: 'new_1',
-  name: 'Athleisure Training Sweatshirt',
+  name: 'Dri-FIT Running Top',
   category: 'UPPER BODY',
   image: 'https://images.unsplash.com/photo-1777895090606-2fc57c67da41?auto=format&fit=crop&w=800&q=80',
   washTemp: 30,
