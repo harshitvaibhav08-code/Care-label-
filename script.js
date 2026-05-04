@@ -4,7 +4,7 @@ const MOCK_DB = [
     id: 'g1',
     name: 'Full-hands sweatshirt',
     category: 'UPPER BODY',
-    image: 'https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1777878395199-3218d9bf067d?auto=format&fit=crop&w=400&q=80',
     washTemp: 40,
     dryCleanOnly: false,
     icons: ['ph-washing-machine', 'ph-thermometer']
@@ -13,7 +13,7 @@ const MOCK_DB = [
     id: 'g2',
     name: 'Training jacket',
     category: 'OUTERWEAR',
-    image: 'https://images.unsplash.com/photo-1559551409-dadc959f76b8?auto=format&fit=crop&w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1777878423523-18acfaf36d46?auto=format&fit=crop&w=400&q=80',
     washTemp: 30,
     dryCleanOnly: false,
     icons: ['ph-drop', 'ph-coat-hanger']
@@ -22,7 +22,7 @@ const MOCK_DB = [
     id: 'g3',
     name: 'Training sleeveless top',
     category: 'UPPER BODY',
-    image: 'https://images.unsplash.com/photo-1581655353564-df123a1eb820?auto=format&fit=crop&w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1777878409845-cc550cbc779d?auto=format&fit=crop&w=400&q=80',
     washTemp: 40,
     dryCleanOnly: false,
     icons: ['ph-wind', 'ph-timer']
@@ -31,7 +31,7 @@ const MOCK_DB = [
     id: 'g4',
     name: 'Compression tight',
     category: 'LOWER BODY',
-    image: 'https://images.unsplash.com/photo-1506629082955-511b1aa562c8?auto=format&fit=crop&w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1777878362255-4f3025cf9b5e?auto=format&fit=crop&w=400&q=80',
     washTemp: 30,
     dryCleanOnly: false,
     icons: ['ph-lightning', 'ph-drop']
@@ -40,7 +40,7 @@ const MOCK_DB = [
     id: 'g5',
     name: 'Athletic shorts',
     category: 'LOWER BODY',
-    image: 'https://images.unsplash.com/photo-1565084888279-aca607ecce0c?auto=format&fit=crop&w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1777878381359-53ec28cccf0b?auto=format&fit=crop&w=400&q=80',
     washTemp: 40,
     dryCleanOnly: false,
     icons: ['ph-washing-machine']
@@ -58,7 +58,7 @@ const MOCK_DB = [
     id: 'g7',
     name: 'Silk Evening Blouse',
     category: 'DELICATES',
-    image: 'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=400&q=80',
+    image: 'https://images.unsplash.com/photo-1704775983313-756dd3ac2569?auto=format&fit=crop&w=400&q=80',
     washTemp: null,
     dryCleanOnly: true,
     icons: ['ph-prohibit']
@@ -69,7 +69,7 @@ const scannedItem = {
   id: 'new_1',
   name: 'Athleisure Training Sweatshirt',
   category: 'UPPER BODY',
-  image: 'https://images.unsplash.com/photo-1777722936894-f26559ced81a?auto=format&fit=crop&w=800&q=80',
+  image: 'https://images.unsplash.com/photo-1777878109008-73dfac4bfc5d?auto=format&fit=crop&w=800&q=80',
   washTemp: 30,
   dryCleanOnly: false,
   icons: ['ph-washing-machine', 'ph-wind']
