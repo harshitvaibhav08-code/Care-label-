@@ -69,7 +69,7 @@ const scannedItem = {
   id: 'new_1',
   name: 'Athleisure Training Sweatshirt',
   category: 'UPPER BODY',
-  image: 'https://images.unsplash.com/photo-1777878109008-73dfac4bfc5d?auto=format&fit=crop&w=800&q=80',
+  image: 'https://images.unsplash.com/photo-1777895090606-2fc57c67da41?auto=format&fit=crop&w=800&q=80',
   washTemp: 30,
   dryCleanOnly: false,
   icons: ['ph-washing-machine', 'ph-wind']
